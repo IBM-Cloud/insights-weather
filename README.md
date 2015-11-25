@@ -2,7 +2,7 @@
 
 This project provides a user interface to query the IBM Insights for Weather service.
 
-[![Deploy to Bluemix](http://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/insights-weather)
+[![Deploy to Bluemix](http://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/insights-weather)
 
 ## Running the app on Bluemix
 
