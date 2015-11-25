@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- '0.12'
+sudo: true
+env:
+  global:
+  - CF_APP=insights-weather
+  - CF_SPACE=dev
+before_deploy: npm install -g cf-blue-green
+deploy:
+  provider: script
+  script: export CF_API=https://api.ng.bluemix.net && cf-blue-green-travis && export CF_API=https://api.eu-gb.bluemix.net && cf-blue-green-travis
+  on:
+    branch: master
+    repo: IBM-Bluemix/insights-weather

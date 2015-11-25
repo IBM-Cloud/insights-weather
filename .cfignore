@@ -1,0 +1,6 @@
+node_modules
+vcap-local.json
+public/vendor
+README.md
+License.txt
+public/api

@@ -1,0 +1,32 @@
+{
+  "name": "insights-weather",
+  "version": "0.0.1",
+  "description": "A sample application featuring the IBM Insights for Weather service",
+  "scripts": {
+    "start": "node app.js",
+    "postinstall": "bower install --allow-root"
+  },
+  "dependencies": {
+    "bower": "^1.4.2",
+    "cfenv": "^1.0.3",
+    "express": "^4.13.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IBM-Bluemix/insights-weather.git"
+  },
+  "engines": {
+    "node": "0.12.x"
+  },
+  "author": "IBM Corp.",
+  "contributors": [
+    {
+      "name": "Frederic Lavigne",
+      "email": "frederic.lavigne@fr.ibm.com"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/IBM-Bluemix/insights-weather/issues"
+  },
+  "license": "Apache-2.0"
+}

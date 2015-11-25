@@ -1,0 +1,10 @@
+declared-services:
+  insights-weather-weatherinsights:
+    label: weatherinsights
+    plan: Free
+applications:
+- services:
+  - insights-weather-weatherinsights
+  name: insights-weather
+  host: insights-weather
+  memory: 256M
