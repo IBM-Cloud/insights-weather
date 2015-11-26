@@ -14,5 +14,17 @@
     "tests"
   ],
   "dependencies": {
+    "bootstrap": "~3.3.6",
+    "json-formatter": "~0.4.1",
+    "moment": "~2.10.6",
+    "livestamp": "~1.1.2",
+    "angular": "~1.4.8",
+    "lodash": "~3.10.1",
+    "angular-cookies": "~1.4.8",
+    "angular-google-maps": "~2.2.1",
+    "angular-ui-router": "~0.2.15",
+    "angular-strap": "~2.3.6",
+    "angular-typeahead": "~0.3.0",
+    "angular-spinners": "~3.0.4"
   }
 }

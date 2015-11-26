@@ -1,0 +1,353 @@
+html,
+body {
+  font-family: Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  min-width: 600px;
+}
+
+.source-panel {
+  margin-top: 10px;
+}
+
+.source-panel .collapse {
+  margin-top: 10px;
+}
+
+/**
+ * Site header
+ */
+
+.header {
+  background-color: #55acee;
+  color: #ffffff;
+  height: 60px;
+}
+.navbar-brand {
+  color: #ffffff;
+  padding-top: 20px;
+}
+.navbar {
+  margin-bottom: 10px;
+}
+
+.navbar .nav>li>a:focus,
+.navbar .nav>li>a:hover {
+  text-decoration: none;
+  background-color: transparent !important;
+}
+.navbar-toggle .icon-bar {
+  background-color: #000;
+}
+
+/**
+ * Banner
+ */
+.banner-subtitle {
+  font-size: 35px;
+  color: white;
+  padding: 10px;
+}
+
+.banner-subtitle-word {
+  font-size: 35px;
+  color: white;
+  background: rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+/**
+ * Home Page
+ */
+.home-container {
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #2E3032;
+}
+
+.home-nested-container {
+  position: absolute;
+  background-image: url(/images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 50px;
+  left: 50px;
+  bottom: 50px;
+  right: 50px;
+}
+
+.home-deploy {
+  margin: 10px;
+  text-align: right;
+}
+
+.home-title {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.home-form {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+}
+
+.home-predefined, .home-predefined a {
+  color: white;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+/**
+ * Search Page
+ */
+.search-container {
+}
+  
+.search-title {
+  position: relative;
+  line-height: 30px;
+  font-size: 30px;
+  height: 46px;
+  top: 19px;
+  margin-right: 24px;
+}
+
+.search-banner {
+  background: #eee;
+  padding-bottom: 12px;
+  padding-left: 24px;
+}
+
+.search-form {
+}
+
+.search-results {
+  margin-top: 24px;
+}
+/**
+ * Current Weather
+ */
+.weather-current {
+  margin-top: 10px !important;
+  margin-bottom: 10px;
+}
+
+.weather-current .media-left {
+  text-align: center;
+}
+
+.weather-current-temp {
+  font-size: 50px;
+}
+
+.weather-current-temp-mode {
+  font-size: 24px;
+  line-height: 50px;
+  vertical-align: super;
+}
+
+.weather-current-icon {
+  width: 96px;
+  height: 96px;
+}
+
+/**
+ * Hourly
+ */
+.weather-hourly-table tbody tr td {
+  vertical-align: middle;
+}
+
+.weather-hourly-temp {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.weather-hourly-morerow {
+  display: none;
+}
+
+/**
+ * 10 day
+ */
+.weather-10-day {
+  display: inline;
+}
+
+.weather-day-box {
+  border: 1px solid #eee;
+  display: inline-table;
+  padding: 4px;
+  width: 60px;
+  font-size: 12px;
+}
+
+.weather-forecast-box {
+  display: inline-table;
+  width: 80px;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.weather-forecast-box:hover {
+  border: 1px solid #032363;
+  background-color: #003399;
+  color: white;
+}
+
+.weather-forecast-icon {
+  width: 48px;
+  height: 48px;
+}
+
+/**
+ * Map
+ */
+.angular-google-map-container {
+  width: 100%;
+  height: 200px;
+}
+
+/**
+ * Footer
+ */
+footer {
+}
+
+/**
+ * Search field
+ */
+.search-button {
+  width: 46px;
+  height: 46px;
+  top: 12px;
+  line-height: 30px;
+  border: none;
+  background: white;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.search-button img, .search-button i {
+  width: 40px;
+  height: 40px;
+}
+
+.typeahead,
+.tt-query,
+.tt-hint {
+  text-align: left;
+  padding: 8px 12px;
+  font-size: 30px;
+  line-height: 30px;
+  height: 46px;
+  border: none;
+  width: 400px;
+  outline: none;
+}
+
+.typeahead {
+  background-color: #fff;
+}
+
+.typeahead:focus {
+}
+
+.tt-query {
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-menu {
+  text-align: left;
+  width: 450px;
+  margin: 0px 0;
+  margin-top: 4px;
+  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.tt-suggestion:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #0097cf;
+}
+
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+/**
+ * Searching... animation
+ */
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  bottom: 24px;
+  left: calc(50% - 24px);
+}
+.double-bounce1,
+.double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #55acee;
+  border: solid 3px #fff;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+@-webkit-keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0.0)
+  }
+  50% {
+    -webkit-transform: scale(1.0)
+  }
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  }
+  50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}

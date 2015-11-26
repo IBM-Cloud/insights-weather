@@ -1,0 +1,116 @@
+<div class="search-container" ng-controller="SearchController as controller">
+
+  <div class="search-banner search-form">
+    <form novalidate>
+      <a ui-sref="home"><span class="search-title">Insights Weather</span></a>
+      <input id="search" class="typeahead" type="text" options="controller.autocompleteOptions" datasets="controller.autocompleteData" placeholder="type a city name" ng-model="controller.data.query" sf-typeahead>
+      <button type="submit" class="search-button" ng-click="controller.search()">
+        <img src="images/twc/32.png" /></button>
+    </form>
+  </div>
+
+  <div class="search-results container">
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="weather" ng-if="controller.data.current.observation">
+          <div class="media weather-current">
+            <div class="media-left">
+              <img class="media-object weather-current-icon" ng-src="images/twc/{{controller.data.current.observation.icon_code}}.png" /> {{controller.data.current.observation.phrase_32char}}
+            </div>
+            <div class="media-body">
+              <h4 class="weather-current-temp media-heading">
+                {{controller.data.current.observation.imperial.temp | formatTemperature: controller.data.temperatureMode }}
+                <span class="weather-current-temp-mode">
+                  <a href="" ng-click="controller.setTemperatureMode('F')" ng-if="controller.data.temperatureMode=='C'">°F</a>
+                  <span ng-if="controller.data.temperatureMode=='F'">°F</span>
+                  |
+                  <a href="" ng-click="controller.setTemperatureMode('C')" ng-if="controller.data.temperatureMode=='F'">°C</a>
+                  <span ng-if="controller.data.temperatureMode=='C'">°C</span>
+                </span>
+              </h4>
+              <div>Feels like {{controller.data.current.observation.imperial.feels_like | formatTemperature: controller.data.temperatureMode }}°</div>
+              <div>Humidity: {{controller.data.current.observation.imperial.rh}}%</div>
+              <div class="text-muted">Updated <span data-livestamp="{{controller.data.current.observation.obs_time}}"></span></div>
+            </div>
+          </div>
+          <div class="source-panel">
+            <button class="btn btn-warning btn-xs" type="button" data-toggle="collapse" data-target="#currentSource" aria-expanded="false" aria-controls="tweetsSource">View JSON source for Current observation</button>
+            <div class="collapse" id="currentSource">
+              <json-formatter json="controller.data.current" open="1"></json-formatter>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <ui-gmap-google-map center="controller.data.map.center" zoom="controller.data.map.zoom"></ui-gmap-google-map>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <h2>Hourly forecast</h2>
+      </div>
+
+      <table class="table table-hover table-condensed table-responsive weather-hourly-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Temp</th>
+            <th>Conditions</th>
+            <th>Prep</th>
+            <th>Wind</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="forecast in controller.data.hourly.forecasts" class="{{$index%3!=0 ? 'weather-hourly-morerow':''}}">
+            <td>{{forecast.fcst_valid_local | formatDate:'HH:mm'}}</td>
+            <td class="weather-hourly-temp">{{forecast.temp | formatTemperature: controller.data.temperatureMode }}°</td>
+            <td>
+              <img class="weather-forecast-icon" ng-src="images/twc/{{forecast.icon_code}}.png" /> {{forecast.phrase_32char}}
+            </td>
+            <td>{{forecast.pop}}%</td>
+            <td>
+              <img class="weather-forecast-icon" src="images/twc/23.png" title="{{forecast.wdir_cardinal}}" style="-webkit-transform: rotate({{forecast.wdir+90}}deg); -moz-transform: rotate({{forecast.wdir+90}}deg); -ms-transform: rotate({{forecast.wdir+90}}deg); -o-transform: rotate({{forecast.wdir+90}}deg); transform: rotate({{forecast.wdir+90}}deg);" bs-tooltip/> {{forecast.wspd}} mph
+            </td>
+          </tr>
+          <tr>
+            <td colspan="5">
+              <center>
+                <button type="button" class="btn btn-info btn-sm" onclick="$('.weather-hourly-morerow').toggle();">Toggle all hours</button>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="source-panel">
+        <button class="btn btn-warning btn-xs" type="button" data-toggle="collapse" data-target="#hourlySource" aria-expanded="false" aria-controls="tweetsSource">View JSON source for Hourly forecast</button>
+        <div class="collapse" id="hourlySource">
+          <json-formatter json="controller.data.hourly" open="1"></json-formatter>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <h2>Ten day forecast</h2>
+      </div>
+
+      <div class="weather-forecast-box" ng-repeat="forecast in controller.data.tenday.forecasts" ng-if="forecast.day">
+        <h5>{{forecast.fcst_valid_local | formatDate:'ddd'}}</h5>
+        <div><img class="weather-forecast-icon" ng-src="images/twc/{{forecast.day.icon_code}}.png" title="{{forecast.day.narrative}}" data-placement="bottom" bs-tooltip/></div>
+        <h6>{{forecast.max_temp | formatTemperature: controller.data.temperatureMode }}° / {{forecast.min_temp | formatTemperature: controller.data.temperatureMode }}°</h6>
+      </div>
+
+      <div class="source-panel">
+        <button class="btn btn-warning btn-xs" type="button" data-toggle="collapse" data-target="#tendaySource" aria-expanded="false" aria-controls="tweetsSource">View JSON source for 10 day forecast</button>
+        <div class="collapse" id="tendaySource">
+          <json-formatter json="controller.data.tenday" open="1"></json-formatter>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

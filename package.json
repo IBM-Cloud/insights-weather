@@ -10,7 +10,9 @@
     "bower": "^1.4.2",
     "cf-deployment-tracker-client": "*",
     "cfenv": "^1.0.3",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "lodash": "^3.10.1",
+    "request": "^2.67.0"
   },
   "repository": {
     "type": "git",

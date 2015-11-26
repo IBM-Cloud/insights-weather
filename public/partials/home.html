@@ -1,0 +1,32 @@
+<div class="home-container" ng-controller="SearchController as controller">
+  <div class="home-nested-container">
+
+    <div class="home-deploy">
+      <a href="https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/insights-weather">
+        <img src="http://bluemix.net/deploy/button.png" title="Deploy to Bluemix" />
+      </a>
+    </div>
+
+    <div class="home-title">
+      <span class="banner-subtitle-word">Bluemix</span>
+      <span class="banner-subtitle">+</span>
+      <span class="banner-subtitle-word">Weather</span>
+
+    </div>
+
+    <div class="home-form">
+      <form novalidate>
+        <input id="search" class="typeahead" type="text" options="controller.autocompleteOptions" datasets="controller.autocompleteData" placeholder="type a city name" ng-model="controller.data.query" sf-typeahead autofocus>
+        <button type="submit" class="search-button" ui-sref="search({query: controller.getQuery()})">
+          <img src="images/twc/32.png" />
+        </button>
+        <div class="home-predefined">
+          <a href="" ng-click="controller.data.query = 'Las Vegas, Nevada'">Las Vegas</a>,
+          <a href="" ng-click="controller.data.query = 'Paris, France'">Paris</a>,
+          <a href="" ng-click="controller.data.query = 'New York City, New York'">New York</a>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

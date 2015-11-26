@@ -53,6 +53,20 @@ This project provides a user interface to query the IBM Insights for Weather ser
 
 And voila! You now have your very own instance running on Bluemix. Navigate to the application url, e.g. `<application-host>.mybluemix.net` and start querying the Weather service.
 
+## Built with
+
+  - [node.js](https://nodejs.org/)
+  - [express](http://expressjs.com/)
+  - [Twitter Bootstrap](http://getbootstrap.com/)
+  - [angularJS, angular-cookies, angular-google-maps, angular-ui-router](https://angularjs.org)
+  - [angular-strap](http://mgcrea.github.io/angular-strap/)
+  - [angular-typeahead](https://github.com/Siyfion/angular-typeahead)
+  - [angular-spinners](https://github.com/urish/angular-spinner)
+  - [json-formatter](https://github.com/mohsen1/json-formatter)
+  - [momentjs](http://momentjs.com)
+  - [livestamp.js](http://mattbradley.github.io/livestampjs/)
+  - [lodash](https://lodash.com/)  
+
 ### Troubleshooting
 
 To troubleshoot your Bluemix app the main useful source of information is the logs. To see them, run:
