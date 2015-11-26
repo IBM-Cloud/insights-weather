@@ -5,7 +5,7 @@
       <a ui-sref="home"><span class="search-title">Insights Weather</span></a>
       <input id="search" class="typeahead" type="text" options="controller.autocompleteOptions" datasets="controller.autocompleteData" placeholder="type a city name" ng-model="controller.data.query" sf-typeahead>
       <button type="submit" class="search-button" ng-click="controller.search()">
-        <img src="images/twc/32.png" /></button>
+        <img src="images/weathericons/icon32.png" /></button>
     </form>
   </div>
 
@@ -16,7 +16,7 @@
         <div class="weather" ng-if="controller.data.current.observation">
           <div class="media weather-current">
             <div class="media-left">
-              <img class="media-object weather-current-icon" ng-src="images/twc/{{controller.data.current.observation.icon_code}}.png" /> {{controller.data.current.observation.phrase_32char}}
+              <img class="media-object weather-current-icon" ng-src="images/weathericons/icon{{controller.data.current.observation.icon_code}}.png" /> {{controller.data.current.observation.phrase_32char}}
             </div>
             <div class="media-body">
               <h4 class="weather-current-temp media-heading">
@@ -67,11 +67,11 @@
             <td>{{forecast.fcst_valid_local | formatDate:'HH:mm'}}</td>
             <td class="weather-hourly-temp">{{forecast.temp | formatTemperature: controller.data.temperatureMode }}°</td>
             <td>
-              <img class="weather-forecast-icon" ng-src="images/twc/{{forecast.icon_code}}.png" /> {{forecast.phrase_32char}}
+              <img class="weather-forecast-icon" ng-src="images/weathericons/icon{{forecast.icon_code}}.png" /> {{forecast.phrase_32char}}
             </td>
             <td>{{forecast.pop}}%</td>
             <td>
-              <img class="weather-forecast-icon" src="images/twc/23.png" title="{{forecast.wdir_cardinal}}" style="-webkit-transform: rotate({{forecast.wdir+90}}deg); -moz-transform: rotate({{forecast.wdir+90}}deg); -ms-transform: rotate({{forecast.wdir+90}}deg); -o-transform: rotate({{forecast.wdir+90}}deg); transform: rotate({{forecast.wdir+90}}deg);" bs-tooltip/> {{forecast.wspd}} mph
+              <img class="weather-forecast-icon" src="images/weathericons/icon23.png" title="{{forecast.wdir_cardinal}}" style="-webkit-transform: rotate({{forecast.wdir+90}}deg); -moz-transform: rotate({{forecast.wdir+90}}deg); -ms-transform: rotate({{forecast.wdir+90}}deg); -o-transform: rotate({{forecast.wdir+90}}deg); transform: rotate({{forecast.wdir+90}}deg);" bs-tooltip/> {{forecast.wspd}} mph
             </td>
           </tr>
           <tr>
@@ -99,7 +99,7 @@
 
       <div class="weather-forecast-box" ng-repeat="forecast in controller.data.tenday.forecasts" ng-if="forecast.day">
         <h5>{{forecast.fcst_valid_local | formatDate:'ddd'}}</h5>
-        <div><img class="weather-forecast-icon" ng-src="images/twc/{{forecast.day.icon_code}}.png" title="{{forecast.day.narrative}}" data-placement="bottom" bs-tooltip/></div>
+        <div><img class="weather-forecast-icon" ng-src="images/weathericons/icon{{forecast.day.icon_code}}.png" title="{{forecast.day.narrative}}" data-placement="bottom" bs-tooltip/></div>
         <h6>{{forecast.max_temp | formatTemperature: controller.data.temperatureMode }}° / {{forecast.min_temp | formatTemperature: controller.data.temperatureMode }}°</h6>
       </div>
 
