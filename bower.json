@@ -24,7 +24,7 @@
     "angular-google-maps": "~2.2.1",
     "angular-ui-router": "~0.2.15",
     "angular-strap": "~2.3.6",
-    "angular-typeahead": "~0.3.0",
+    "angular-typeahead": "~0.2.4",
     "angular-spinners": "~3.0.4"
   }
 }
