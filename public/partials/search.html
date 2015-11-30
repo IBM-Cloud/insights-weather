@@ -1,11 +1,12 @@
 <div class="search-container" ng-controller="SearchController as controller">
 
   <div class="search-banner search-form">
+    <a class="pull-left search-title" ui-sref="home">Insights Weather</a>
     <form novalidate>
-      <a ui-sref="home"><span class="search-title">Insights Weather</span></a>
       <input id="search" class="typeahead" type="text" options="controller.autocompleteOptions" datasets="controller.autocompleteData" placeholder="type a city name" ng-model="controller.data.query" sf-typeahead>
       <button type="submit" class="search-button" ng-click="controller.search()">
-        <img src="images/weathericons/icon32.png" /></button>
+        <img src="images/weathericons/icon32.png" />
+      </button>
     </form>
   </div>
 

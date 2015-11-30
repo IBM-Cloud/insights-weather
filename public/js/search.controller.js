@@ -28,9 +28,9 @@
     if (!controller.data.temperatureMode) {
       // Imperial system of weights and measures:
       // Liberia. Myanmar (a.k.a. “the country formerly known as Burma”) United States of America
-      if (navigator.language.endsWith("US") ||
-        navigator.language.endsWith("LR") ||
-        navigator.language.endsWith("MM")) {
+      if (navigator && (navigator.language.indexOf("US") != -1 ||
+          navigator.language.indexOf("LR") != -1 ||
+          navigator.language.indexOf("MM") != -1)) {
         controller.data.temperatureMode = 'F';
       } else {
         controller.data.temperatureMode = 'C';
