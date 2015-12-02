@@ -1,3 +1,4 @@
 public/vendor
 node_modules
 vcap-local.json
+public/api
