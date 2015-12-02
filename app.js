@@ -41,9 +41,7 @@ app.get("/api/1/autocomplete", function (req, res) {
   });
 });
 
-app.get("/api/1/current.json", function (req, res) {
-  // current?q=  will be first sent to autocomplete to guess the location
-  // or current?latitude=&longitude= will go through
+function weatherApiCall(req, res, method) {
   var onResponse = function (error, body) {
     if (error) {
       res.status(400).send({
@@ -53,69 +51,30 @@ app.get("/api/1/current.json", function (req, res) {
       res.send(body);
     }
   };
+  // ?q=  will be first sent to autocomplete to guess the location
+  // or ?latitude=&longitude= will go through
   if (req.query.q) {
-    weather.currentByQuery(req.query.q, {}, onResponse);
+    weather[method + "ByQuery"](req.query.q, {}, onResponse);
   } else {
-    weather.currentByGeolocation(req.query.latitude, req.query.longitude, {}, onResponse);
+    weather[method + "ByGeolocation"](parseFloat(req.query.latitude), parseFloat(req.query.longitude), {}, onResponse);
   }
+}
+
+app.get("/api/1/current.json", function (req, res) {
+  weatherApiCall(req, res, "current");
 });
 
 app.get("/api/1/tenday.json", function (req, res) {
-  // tenday?q=  will be first sent to autocomplete to guess the location
-  // or tenday?latitude=&longitude= will go through
-  var onResponse = function (error, body) {
-    if (error) {
-      res.status(400).send({
-        error: error
-      });
-    } else {
-      res.send(body);
-    }
-  };
-  if (req.query.q) {
-    weather.tendayByQuery(req.query.q, {}, onResponse);
-  } else {
-    weather.tendayByGeolocation(req.query.latitude, req.query.longitude, {}, onResponse);
-  }
+  weatherApiCall(req, res, "tenday");
 });
 
 app.get("/api/1/hourly.json", function (req, res) {
-  // tenday?q=  will be first sent to autocomplete to guess the location
-  // or tenday?latitude=&longitude= will go through
-  var onResponse = function (error, body) {
-    if (error) {
-      res.status(400).send({
-        error: error
-      });
-    } else {
-      res.send(body);
-    }
-  };
-  if (req.query.q) {
-    weather.hourlyByQuery(req.query.q, {}, onResponse);
-  } else {
-    weather.hourlyByGeolocation(req.query.latitude, req.query.longitude, {}, onResponse);
-  }
+  weatherApiCall(req, res, "hourly");
 });
 
 
 app.get("/api/1/timeseries.json", function (req, res) {
-  // tenday?q=  will be first sent to autocomplete to guess the location
-  // or tenday?latitude=&longitude= will go through
-  var onResponse = function (error, body) {
-    if (error) {
-      res.status(400).send({
-        error: error
-      });
-    } else {
-      res.send(body);
-    }
-  };
-  if (req.query.q) {
-    weather.timeseriesByQuery(req.query.q, {}, onResponse);
-  } else {
-    weather.timeseriesByGeolocation(req.query.latitude, req.query.longitude, {}, onResponse);
-  }
+  weatherApiCall(req, res, "timeseries");
 });
 
 // serve the files out of ./public as our main files
