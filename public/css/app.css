@@ -10,6 +10,7 @@ body {
 }
 .source-panel {
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .source-panel .collapse {
   margin-top: 10px;
@@ -187,6 +188,13 @@ body {
 .weather-forecast-icon {
   width: 48px;
   height: 48px;
+}
+
+/**
+ * Past Observations
+ */
+.weather-observations-morerow {
+  display: none;
 }
 
 /**

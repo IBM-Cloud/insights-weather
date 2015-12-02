@@ -11,7 +11,7 @@
   </div>
 
   <div class="search-results container">
-
+    
     <div class="row">
       <div class="col-md-6">
         <div class="weather" ng-if="controller.data.current.observation">
@@ -36,7 +36,7 @@
             </div>
           </div>
           <div class="source-panel">
-            <button class="btn btn-warning btn-xs" type="button" data-toggle="collapse" data-target="#currentSource" aria-expanded="false" aria-controls="tweetsSource">View JSON source for Current observation</button>
+            <button class="btn btn-warning btn-xs" type="button" data-toggle="collapse" data-target="#currentSource" aria-expanded="false" aria-controls="currentSource">View JSON source for Current observation</button>
             <div class="collapse" id="currentSource">
               <json-formatter json="controller.data.current" open="1"></json-formatter>
             </div>
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" ng-if="controller.data.hourly.forecasts">
       <div>
         <h2>Hourly forecast</h2>
       </div>
@@ -86,14 +86,14 @@
       </table>
 
       <div class="source-panel">
-        <button class="btn btn-warning btn-xs" type="button" data-toggle="collapse" data-target="#hourlySource" aria-expanded="false" aria-controls="tweetsSource">View JSON source for Hourly forecast</button>
+        <button class="btn btn-warning btn-xs" type="button" data-toggle="collapse" data-target="#hourlySource" aria-expanded="false" aria-controls="hourlySource">View JSON source for Hourly forecast</button>
         <div class="collapse" id="hourlySource">
           <json-formatter json="controller.data.hourly" open="1"></json-formatter>
         </div>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" ng-if="controller.data.tenday.forecasts">
       <div>
         <h2>Ten day forecast</h2>
       </div>
@@ -112,6 +112,53 @@
       </div>
     </div>
 
+    <div class="row" ng-if="controller.data.timeseries.observations">
+      <div>
+        <h2>Past observations</h2>
+      </div>
+
+      <table class="table table-hover table-condensed table-responsive weather-hourly-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Temp</th>
+            <th>Conditions</th>
+            <th>Wind</th>
+            <th>Observed from</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="observation in controller.data.timeseries.observations" class="{{$index%5!=0 ? 'weather-observations-morerow':''}}">
+            <td>{{observation.valid_time_gmt*1000 | formatDate:'DD MMM YYYY HH:mm'}}</td>
+            <td class="weather-hourly-temp">{{observation.temp | formatTemperature: controller.data.temperatureMode }}°</td>
+            <td>
+              <img class="weather-forecast-icon" ng-src="images/weathericons/icon{{observation.wx_icon}}.png" /> {{observation.wx_phrase}}
+            </td>
+            <td>
+              <img class="weather-forecast-icon" src="images/weathericons/icon23.png" title="{{observation.wdir_cardinal}}" style="-webkit-transform: rotate({{observation.wdir+90}}deg); -moz-transform: rotate({{observation.wdir+90}}deg); -ms-transform: rotate({{observation.wdir+90}}deg); -o-transform: rotate({{observation.wdir+90}}deg); transform: rotate({{observation.wdir+90}}deg);" bs-tooltip/> {{observation.wspd}} mph
+            </td>
+            <td>
+              {{observation.obs_name}}
+            </td>
+          </tr>
+          <tr>
+            <td colspan="5">
+              <center>
+                <button type="button" class="btn btn-info btn-sm" onclick="$('.weather-observations-morerow').toggle();">Toggle all observations</button>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="source-panel">
+        <button class="btn btn-warning btn-xs" type="button" data-toggle="collapse" data-target="#timeseriesSource" aria-expanded="false" aria-controls="timeseriesSource">View JSON source for past observations</button>
+        <div class="collapse" id="timeseriesSource">
+          <json-formatter json="controller.data.timeseries" open="1"></json-formatter>
+        </div>
+      </div>
+
+    </div>
   </div>
 
 </div>
