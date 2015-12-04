@@ -134,7 +134,7 @@
       function () {
         return function (input, scale) {
           // input is assumed in Fahrenheit, as specified in lib/weather.js
-          // conversion to Celcius occurs in the display
+          // conversion to Celsius occurs in the display
           if (scale === 'C') {
             return Math.round((input - 32) * 5.0 / 9.0);
           } else {
