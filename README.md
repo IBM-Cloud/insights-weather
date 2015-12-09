@@ -1,8 +1,10 @@
 # Insights for Weather
 
+[![Build Status](https://travis-ci.org/IBM-Bluemix/insights-weather.svg?branch=master)](https://travis-ci.org/IBM-Bluemix/insights-weather)
+
 This project provides a user interface to query the IBM Insights for Weather service.
 
-[![Deploy to Bluemix](http://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/insights-weather)
+[![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/a15ae39863da63802a6babd1c8c67310/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/insights-weather.git)
 
 ## Running the app on Bluemix
 
