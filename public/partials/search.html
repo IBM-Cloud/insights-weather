@@ -17,11 +17,11 @@
         <div class="weather" ng-if="controller.data.current.observation">
           <div class="media weather-current">
             <div class="media-left">
-              <img class="media-object weather-current-icon" ng-src="images/weathericons/icon{{controller.data.current.observation.icon_code}}.png" /> {{controller.data.current.observation.phrase_32char}}
+              <img class="media-object weather-current-icon" ng-src="images/weathericons/icon{{controller.data.current.observation.wx_icon}}.png" /> {{controller.data.current.observation.phrase_32char}}
             </div>
             <div class="media-body">
               <h4 class="weather-current-temp media-heading">
-                {{controller.data.current.observation.imperial.temp | formatTemperature: controller.data.temperatureMode }}
+                {{controller.data.current.observation.temp | formatTemperature: controller.data.temperatureMode }}
                 <span class="weather-current-temp-mode">
                   <a href="" ng-click="controller.setTemperatureMode('F')" ng-if="controller.data.temperatureMode=='C'">°F</a>
                   <span ng-if="controller.data.temperatureMode=='F'">°F</span>
@@ -30,9 +30,9 @@
                   <span ng-if="controller.data.temperatureMode=='C'">°C</span>
                 </span>
               </h4>
-              <div>Feels like {{controller.data.current.observation.imperial.feels_like | formatTemperature: controller.data.temperatureMode }}°</div>
-              <div>Humidity: {{controller.data.current.observation.imperial.rh}}%</div>
-              <div class="text-muted">Updated <span data-livestamp="{{controller.data.current.observation.obs_time}}"></span></div>
+              <div>Feels like {{controller.data.current.observation.feels_like | formatTemperature: controller.data.temperatureMode }}°</div>
+              <div>Humidity: {{controller.data.current.observation.rh}}%</div>
+              <div class="text-muted">Updated <span data-livestamp="{{controller.data.current.observation.valid_time_gmt}}"></span></div>
             </div>
           </div>
           <div class="source-panel">

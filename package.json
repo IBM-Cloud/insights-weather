@@ -11,7 +11,7 @@
     "cf-deployment-tracker-client": "*",
     "cfenv": "^1.0.3",
     "express": "^4.13.3",
-    "lodash": "^3.10.1",
+    "lodash": "^4.13.1",
     "request": "^2.67.0"
   },
   "repository": {

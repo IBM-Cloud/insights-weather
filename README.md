@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/IBM-Bluemix/insights-weather.svg?branch=master)](https://travis-ci.org/IBM-Bluemix/insights-weather)
 
-This project provides a user interface to query the IBM Insights for Weather service.
+This project provides a user interface to query the Weather Company Data for IBM Bluemix service.
 
 [![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/a15ae39863da63802a6babd1c8c67310/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/insights-weather.git)
 
@@ -41,10 +41,10 @@ This project provides a user interface to query the IBM Insights for Weather ser
 	$ cf api https://api.ng.bluemix.net
 	$ cf login
 	```
-7. Create the Insights for Weather service in Bluemix.
+7. Create the Weather Company Data for IBM Bluemix service.
 
   ```
-  $ cf create-service weatherinsights Free insights-weather-weatherinsights
+  $ cf create-service weatherinsights Free-v2 insights-weather-weatherinsights
   ```
 
 8. Push the application to Bluemix.
@@ -95,7 +95,7 @@ Deployment tracking can be disabled by removing `require("cf-deployment-tracker-
 
 ---
 
-This project is a sample application created for the purpose of demonstrating the use of the Insights for Weather service.
+This project is a sample application created for the purpose of demonstrating the use of the Weather Company Data for IBM Bluemix service.
 The program is provided as-is with no warranties of any kind, express or implied.
 
 [bluemix_signup_url]: https://console.ng.bluemix.net/?cm_mmc=GitHubReadMe-_-BluemixSampleApp-_-Node-_-Workflow

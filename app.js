@@ -36,7 +36,7 @@ app.get("/api/1/autocomplete", function (req, res) {
         error: error
       });
     } else {
-      res.send(body.RESULTS);
+      res.send(body);
     }
   });
 });

@@ -1,10 +1,9 @@
 declared-services:
   insights-weather-weatherinsights:
     label: weatherinsights
-    plan: Free
+    plan: Free-v2
 applications:
 - services:
   - insights-weather-weatherinsights
   name: insights-weather
-  host: insights-weather
   memory: 256M
