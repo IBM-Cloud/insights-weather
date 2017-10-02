@@ -19,7 +19,7 @@
     "url": "https://github.com/IBM-Bluemix/insights-weather.git"
   },
   "engines": {
-    "node": "0.12.x"
+    "node": "6.9.x"
   },
   "author": "IBM Corp.",
   "contributors": [
