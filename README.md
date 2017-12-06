@@ -4,7 +4,7 @@
 
 This project provides a user interface to query the Weather Company Data for IBM Bluemix service.
 
-[![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/a15ae39863da63802a6babd1c8c67310/button.svg)](https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/insights-weather.git)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/insights-weather.git)
 
 ## Running the app on Bluemix
 
@@ -76,22 +76,6 @@ To troubleshoot your Bluemix app the main useful source of information is the lo
   ```sh
   $ cf logs <application-name> --recent
   ```
-
-## Privacy Notice
-This application includes code to track deployments to IBM Bluemix and other Cloud Foundry platforms.
-The following information is sent to a [Deployment Tracker](https://github.com/IBM-Bluemix/cf-deployment-tracker-service)
-service on each deployment:
-
-* Application Name (application_name)
-* Space ID (space_id)
-* Application Version (application_version)
-* Application URIs (application_uris)
-
-This data is collected from the VCAP_APPLICATION environment variable in IBM Bluemix and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
-
-### Disabling Deployment Tracking
-
-Deployment tracking can be disabled by removing `require("cf-deployment-tracker-client").track();` from the beginning of the `app.js` file.
 
 ---
 

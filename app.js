@@ -7,9 +7,6 @@ var
   app = express(),
   cfenv = require('cfenv');
 
-//---Deployment Tracker---------------------------------------------------------
-require("cf-deployment-tracker-client").track();
-
 // load local VCAP configuration
 var vcapLocal = null;
 try {
